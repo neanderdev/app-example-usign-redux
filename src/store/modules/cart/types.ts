@@ -1,14 +1,15 @@
 export interface IProduct {
-    id: number,
-    title: string,
-    price: number,
+  id: number;
+  title: string;
+  price: number;
 }
 
 export interface ICartItems {
-    product: IProduct;
-    quantity: number;
+  product: IProduct;
+  quantity: number;
 }
 
 export interface ICartState {
-    items: ICartItems[];
+  items: ICartItems[];
+  failedStockCheck: number[];
 }
