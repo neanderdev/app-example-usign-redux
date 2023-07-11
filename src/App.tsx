@@ -1,16 +1,19 @@
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
-import store from './store';
+import { persistor, store } from './store';
 
-import { Catalog } from './components/Catalog';
 import { Cart } from './components/Cart';
+import { Catalog } from './components/Catalog';
 
 function App() {
   return (
     <Provider store={store}>
-      <Catalog />
+      <PersistGate loading={null} persistor={persistor}>
+        <Catalog />
 
-      <Cart />
+        <Cart />
+      </PersistGate>
     </Provider>
   );
 }
